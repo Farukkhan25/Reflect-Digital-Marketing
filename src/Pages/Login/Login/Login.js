@@ -2,13 +2,13 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import img from "../../../assets/images/login/login.svg";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [error, setError] = useState("");
-  const { login, setLoading, providerLogin } = useContext(AuthContext);
+  const { login, setLoading, providerLogin, resetPassword } =
+    useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,8 +24,10 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        form.reset();
+        // form.reset();
         setError("");
+        toast.success("Login Success!");
+        // navigate(from, { replace: true });
 
         const currentUser = {
           email: user.email,
@@ -50,7 +52,7 @@ const Login = () => {
       .catch((error) => console.error(error));
   };
 
-  //Reset Pass
+  //Reset Password
   const handleReset = () => {
     resetPassword(userEmail)
       .then(() => {

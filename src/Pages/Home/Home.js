@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import HomeServices from '../../Components/HomeServices/HomeServices';
+
 
 const Home = () => {
+    
     return (
-        <div>
-            
-        </div>
+        <Fragment>
+          <HomeServices />
+        </Fragment>
     );
 };
 

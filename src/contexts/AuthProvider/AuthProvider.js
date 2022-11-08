@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -41,6 +42,12 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+    //  Forget Password
+  const resetPassword = email => {
+    setLoading(true)
+    return sendPasswordResetEmail(auth, email)
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
@@ -62,6 +69,7 @@ const AuthProvider = ({ children }) => {
     login,
     logOut,
     updateUserProfile,
+    resetPassword,
   };
 
   return (
