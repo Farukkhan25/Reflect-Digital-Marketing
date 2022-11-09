@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -60,6 +61,8 @@ const Login = () => {
       })
       .catch((error) => toast.error(error.message));
   };
+
+  useTitle("Login");
 
   return (
     <div className="hero w-full my-20">

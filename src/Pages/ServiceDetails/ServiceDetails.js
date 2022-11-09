@@ -3,9 +3,11 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import useTitle from "../../hooks/useTitle";
 
 const ServiceDetails = () => {
   const { _id, title, price, image, details, rating } = useLoaderData();
+  useTitle("Service Details");
   return (
     <div>
       <div className="container mx-auto my-5 max-w-4xl">

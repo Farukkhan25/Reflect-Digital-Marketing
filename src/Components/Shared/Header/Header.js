@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo/logo.png";
+import logo from "../../../assets/logo/logo.jpg";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -55,7 +55,7 @@ const Header = () => {
             rel="noopener noreferrer"
             to="/"
             aria-label="Back to homepage"
-            className="flex items-center px-1 lg:mr-4"
+            className="flex items-center px-4 py-0 lg:mr-4 bg-white"
           >
             <img src={logo} alt="" style={{ height: "40px" }} />
           </Link>
@@ -64,7 +64,7 @@ const Header = () => {
               <Link
                 rel="noopener noreferrer"
                 to="/"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                className="flex items-center px-4 -mb-1  dark:border-transparent"
                 // className={({ isActive }) =>
                 //           isActive
                 //             ? "font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
@@ -87,7 +87,7 @@ const Header = () => {
               <Link
                 rel="noopener noreferrer"
                 to="/blog"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                className="flex items-center px-4 -mb-1  dark:border-transparent"
               >
                 Blog
               </Link>
