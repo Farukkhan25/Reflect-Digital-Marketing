@@ -11,11 +11,14 @@ const HomeServices = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="container mx-auto my-5">
+    <div className="container mx-auto my-7">
       <div className="text-center mb-4">
-        <p className="py-4 text-3xl font-bold text-orange-600">Our Services</p>
+        <p className="py-4 text-2xl font-bold text-orange-600">Special Services</p>
 
-        <p>Save time managing your business with Our best services</p>
+        <p className="text-3xl text-white pb-3">
+          Save time managing your business with
+        </p>
+        <p className="highlight text-3xl">My best services</p>
       </div>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
         {services.map((service) => (

@@ -86,6 +86,7 @@ const ServiceDetails = () => {
           </div>
         </Card>
       </div>
+      
     </div>
   );
 };

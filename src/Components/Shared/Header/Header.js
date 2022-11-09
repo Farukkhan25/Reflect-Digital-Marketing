@@ -48,8 +48,8 @@ const Header = () => {
   );
 
   return (
-    <header className="bg-gray-800 p-4 dark:bg-gray-800 dark:text-gray-100">
-      <div className="container flex justify-between h-16 mx-auto">
+    <header className="bg-gray-800 text-gray-100 p-3 dark:bg-gray-800 dark:text-gray-100">
+      <div className="container lg:px-20 flex justify-between h-16 mx-auto">
         <div className="flex">
           <Link
             rel="noopener noreferrer"
