@@ -48,7 +48,7 @@ const Header = () => {
   );
 
   return (
-    <header className="bg-white p-4 dark:bg-gray-800 dark:text-gray-100">
+    <header className="bg-gray-800 p-4 dark:bg-gray-800 dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto">
         <div className="flex">
           <Link
@@ -74,6 +74,11 @@ const Header = () => {
                 rel="noopener noreferrer"
                 to="/"
                 className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                // className={({ isActive }) =>
+                //           isActive
+                //             ? "font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+                //             : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                //         }
               >
                 Home
               </Link>
@@ -82,7 +87,7 @@ const Header = () => {
               <Link
                 rel="noopener noreferrer"
                 to="/"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+                className="flex items-center px-4 -mb-1 "
               >
                 Survices
               </Link>
