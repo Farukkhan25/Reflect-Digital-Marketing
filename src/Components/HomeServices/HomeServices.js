@@ -26,7 +26,7 @@ const HomeServices = () => {
         <Link to="/allServices">
           <button
             type="button"
-            className="btn btn-primary py-4 my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400"
+            className="btn btn-info px-7 my-8 text-lg font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400"
           >
             See All
           </button>

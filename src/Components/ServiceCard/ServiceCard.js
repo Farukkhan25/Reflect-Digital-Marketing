@@ -11,7 +11,7 @@ const ServiceCard = ({ service }) => {
       <figure>
         {/* <img src={image} style={{ height: "300px", width: "400px" }} alt="" /> */}
         <PhotoProvider>
-          <PhotoView src={image} >
+          <PhotoView src={image}>
             <img
               src={image}
               style={{ height: "300px", width: "400px" }}
@@ -23,13 +23,19 @@ const ServiceCard = ({ service }) => {
       <div className="card-body">
         <h2 className="card-title text-center">{title}</h2>
         <p className="text-gray-200 dark:text-white text-justify">
-          {details.substring(0, 100) + "..."}
+          {details.substring(0, 100) + " ..."}
         </p>
-        <p className="text-2xl text-orange-600 font-semibold">Price: {price}</p>
-        <div className="card-actions justify-end">
-          <Link to={`/details/${_id}`}>
-            <button className="btn btn-primary">View Details</button>
-          </Link>
+        <div className="flex justify-between pt-4">
+          <div>
+            <p className="text-2xl text-orange-400 font-semibold">
+              Price: {price}
+            </p>
+          </div>
+          <div className="card-actions">
+            <Link to={`/details/${_id}`}>
+              <button className="btn btn-primary">View Details</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
