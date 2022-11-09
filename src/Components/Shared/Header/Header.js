@@ -86,7 +86,7 @@ const Header = () => {
             <li className="flex">
               <Link
                 rel="noopener noreferrer"
-                to="/"
+                to="/allServices"
                 className="flex items-center px-4 -mb-1 "
               >
                 Survices

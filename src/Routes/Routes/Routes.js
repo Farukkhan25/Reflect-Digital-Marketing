@@ -5,6 +5,7 @@ import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import Services from "../../Pages/Services/Services";
 
 export const routes = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/allServices",
+        element: <Services></Services>,
       },
       {
         path: "/details/:id",

@@ -1,18 +1,28 @@
 import { Card } from "flowbite-react";
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceDetails = () => {
   const { _id, title, price, image, details, rating } = useLoaderData();
   return (
     <div>
       <div className="container mx-auto my-5 max-w-4xl">
-        <Card imgAlt="" imgSrc={image}>
-         
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              {title}
-            </h5>
-          
+        <Card>
+          <PhotoProvider>
+            <PhotoView src={image}>
+              <img
+                src={image}
+                style={{ height: "300px", width: "400px" }}
+                alt=""
+              />
+            </PhotoView>
+          </PhotoProvider>
+          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            {title}
+          </h5>
+
           <div className="mt-2.5 mb-5 flex items-center">
             <svg
               className="h-5 w-5 text-yellow-300"
