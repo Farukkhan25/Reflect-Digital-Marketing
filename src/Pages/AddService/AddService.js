@@ -7,20 +7,20 @@ const AddService = () => {
         event.preventDefault();
         console.log(service);
 
-        fetch('http://localhost:5000/details', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(service)
+        fetch("https://server-alpha-lake.vercel.app/details", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(service),
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.acknowledged){
-                alert('service added successfully');
-                event.target.reset();
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              alert("service added successfully");
+              event.target.reset();
             }
-        })
+          });
     }
 
     const handleInputBlur = event =>{

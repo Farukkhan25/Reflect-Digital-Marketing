@@ -15,11 +15,7 @@ const ServiceDetails = () => {
         <Card>
           <PhotoProvider>
             <PhotoView src={image}>
-              <img
-                src={image}
-                
-                alt=""
-              />
+              <img src={image} alt="" />
             </PhotoView>
           </PhotoProvider>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -87,10 +83,8 @@ const ServiceDetails = () => {
           </div>
         </Card>
       </div>
-      <Link to={`/review/${_id}`}>
-      <ReviewCard ></ReviewCard>
-      </Link>
 
+      <ReviewCard></ReviewCard>
     </div>
   );
 };

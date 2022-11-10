@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReviewCard from '../ReviewCard/ReviewCard';
 
 const Review = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:5000/details")
+      fetch("https://server-alpha-lake.vercel.app/details")
         .then((res) => res.json())
         .then((data) => setServices(data));
     }, []);
