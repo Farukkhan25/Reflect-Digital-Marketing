@@ -2,9 +2,8 @@
 
 Welcome to my new react app. This is an online service website where you may find different services of digital marketing.
 
-## Live site:
+## Live site: https://digital-marketing-d1e47.web.app
 
-https://server-alpha-lake.vercel.app/
 
 ### Overview
 
