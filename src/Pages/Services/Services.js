@@ -11,7 +11,7 @@ const Services = () => {
         .then((data) => setServices(data));
     }, []);
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto mb-4">
         <div className="text-center mb-4">
           <p className="text-2xl font-bold text-orange-600">Our Services</p>
 

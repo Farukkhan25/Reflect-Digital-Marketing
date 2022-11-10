@@ -4,6 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import useTitle from "../../hooks/useTitle";
+import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 
 const ServiceDetails = () => {
   const { _id, title, price, image, details, rating } = useLoaderData();
@@ -16,7 +17,7 @@ const ServiceDetails = () => {
             <PhotoView src={image}>
               <img
                 src={image}
-                style={{ height: "300px", width: "400px" }}
+                
                 alt=""
               />
             </PhotoView>
@@ -86,7 +87,10 @@ const ServiceDetails = () => {
           </div>
         </Card>
       </div>
-      
+      <Link to={`/review/${_id}`}>
+      <ReviewCard ></ReviewCard>
+      </Link>
+
     </div>
   );
 };
