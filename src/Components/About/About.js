@@ -27,7 +27,7 @@ const About = () => {
     return (
       <section id="about">
         <div className="container">
-          <div className="about__wrapper">
+          <div className="about__wrapper lg:px-20 px-4">
             <div className="about__content">
               <h6 className="subtitle">Why choose me</h6>
               <h2>Specialist in avoiding clients on</h2>
