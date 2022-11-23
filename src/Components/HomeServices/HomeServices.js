@@ -11,7 +11,7 @@ const HomeServices = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="container mx-auto lg:py-24 py-12 lg:px-12 px-4">
+    <div className="container mx-auto lg:py-16 py-12 lg:px-12 px-4">
       <div className="text-center mb-4">
         <p className="py-4 text-2xl font-bold text-orange-600">
           Special Services

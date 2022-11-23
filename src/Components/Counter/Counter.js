@@ -22,8 +22,8 @@ const counterData = [
 
 const Counter = () => {
     return (
-      <section className="counter mb-16" id="projects">
-        <div className="container">
+      <section className="counter mb-6" id="projects">
+        <div className="container bg-gray-900 py-6">
           <div className="counter__top-content ">
             <h6 className="subtitle">My Projects</h6>
             <h2>Business associates work to deliver</h2>

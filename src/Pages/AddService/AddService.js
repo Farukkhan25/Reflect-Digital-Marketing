@@ -32,23 +32,59 @@ const AddService = () => {
     }
 
     return (
-        <div className='container mx-auto justify-items-center lg:px-24 text-center py-6'>
-            <h2>Please add a new service</h2>
-            <form onSubmit={handleAddService} className="py-6">
-                <input onBlur={handleInputBlur} type="text" name='title' placeholder='title' required />
-                <br />
-                <input onBlur={handleInputBlur} type="text" name='price' placeholder='price' required />
-                <br />
-                <input onBlur={handleInputBlur} type="text" name='details' placeholder='details' required />
-                <br />
-                <input onBlur={handleInputBlur} type="text" name='image' placeholder='imageURL' required />
-                <br />
-                <input onBlur={handleInputBlur} type="text" name='rating' placeholder='rating' required />
-                <br />
-                
-                <button type="submit" className='btn btn-primary mt-5'>Add Service</button>
-            </form>
+      <div className="container mx-auto justify-items-center lg:px-24 text-center py-6">
+        <h2>Please add a new service</h2>
+        <div className=" bg-blue-600 p-6">
+          <form onSubmit={handleAddService} className="py-6  bg-gray-200">
+            <input
+              onBlur={handleInputBlur}
+              type="text"
+              name="title"
+              placeholder="title"
+              required
+            />
+            <br />
+            <input
+              onBlur={handleInputBlur}
+              type="text"
+              name="price"
+              placeholder="price"
+              required
+              className="my-3"
+            />
+            <br />
+            <input
+              onBlur={handleInputBlur}
+              type="text"
+              name="details"
+              placeholder="details"
+              required
+            />
+            <br />
+            <input
+              onBlur={handleInputBlur}
+              type="text"
+              name="image"
+              placeholder="imageURL"
+              required
+              className="my-3"
+            />
+            <br />
+            <input
+              onBlur={handleInputBlur}
+              type="text"
+              name="rating"
+              placeholder="rating"
+              required
+            />
+            <br />
+
+            <button type="submit" className="btn btn-primary mt-5">
+              Add Service
+            </button>
+          </form>
         </div>
+      </div>
     );
 };
 

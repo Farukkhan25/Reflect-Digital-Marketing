@@ -1,11 +1,24 @@
+import { Dropdown } from "flowbite-react";
 import React from "react";
 
-const ReviewCard = ({ serviceReview }) => {
-  const { _id, title, name, image, review, rating } = serviceReview;
+const MyReviewsCard = ({ myReview, handleDelete, handleEdit }) => {
+  const { _id, reviewTitle, name, image, review, rating } = myReview;
+  // console.log(myReview)
 
-  // console.log(serviceReview);
   return (
-    <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
+    <div className="container flex flex-col w-full max-w-lg p-6 mb-5 mx-auto divide-y rounded-md bg-indigo-200 text-gray-800 divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
+      <div className="md:flex md:justify-between md:items-center pb-3">
+        <h3>
+          Service Name:{" "}
+          <span className="text-blue-800 font-semibold">{reviewTitle}</span>{" "}
+        </h3>
+        <Dropdown label="Action" arrowIcon={false} className="btn-danger p-0">
+          <Dropdown.Item onClick={() => handleEdit(_id)}>Edit</Dropdown.Item>
+          <Dropdown.Item onClick={() => handleDelete(_id)}>
+            Delete
+          </Dropdown.Item>
+        </Dropdown>
+      </div>
       <div className="flex justify-between p-4">
         <div className="flex space-x-4 items-center">
           <div>
@@ -37,4 +50,4 @@ const ReviewCard = ({ serviceReview }) => {
   );
 };
 
-export default ReviewCard;
+export default MyReviewsCard;

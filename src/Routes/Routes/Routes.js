@@ -11,6 +11,8 @@ import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 import AddService from "../../Pages/AddService/AddService";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import EditReview from "../../Pages/MyReviews/EditReview";
+import Review from "../../Components/Review/Review";
 
 export const routes = createBrowserRouter([
   {
@@ -37,18 +39,24 @@ export const routes = createBrowserRouter([
           fetch(`https://server-alpha-lake.vercel.app/details/${params.id}`),
       },
       {
-        path: "/review/:id",
-        element: <ReviewCard></ReviewCard>,
-        loader: ({ params }) =>
-          fetch(`https://server-alpha-lake.vercel.app/review/${params.title}`),
-      },
-      {
         path: "/reviews",
         element: (
           <PrivateRoute>
             <MyReviews></MyReviews>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/addreview",
+        element: (
+          <PrivateRoute>
+            <Review></Review>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myreview/edit/:id",
+        element: <EditReview></EditReview>,
       },
       {
         path: "/login",
