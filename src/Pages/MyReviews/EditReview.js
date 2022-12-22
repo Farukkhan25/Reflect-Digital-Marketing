@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const EditReview = () => {
   const router = useParams();
@@ -45,7 +45,6 @@ const EditReview = () => {
 
   return (
     <div className="container mx-auto justify-items-center max-w-4xl text-center py-6 bg-slate-200">
-      
       <form onSubmit={handleSubmit} className="py-6 px-24">
         <input
           type="text"

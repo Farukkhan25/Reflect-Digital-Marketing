@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo/logo.jpg";
+import logo from "../../../assets/logo/logo.JPG";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
@@ -59,7 +59,7 @@ const Header = () => {
             rel="noopener noreferrer"
             to="/"
             aria-label="Back to homepage"
-            className="flex items-center px-4 py-0 lg:mr-4 bg-white"
+            className="flex items-center px-4 py-0 lg:mr-4 bg-white rounded-sm"
           >
             <img src={logo} alt="" style={{ height: "40px" }} />
           </Link>

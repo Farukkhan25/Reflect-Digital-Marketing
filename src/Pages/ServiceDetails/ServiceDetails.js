@@ -1,30 +1,18 @@
 import { Card } from "flowbite-react";
 import React, { useContext, useEffect, useState } from "react";
-import {
-  Link,
-  useLoaderData,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import toast from "react-hot-toast";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import useTitle from "../../hooks/useTitle";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
-import Review from "../../Components/Review/Review";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-import Services from "../Services/Services";
 
 const ServiceDetails = () => {
   const { _id, title, price, image, details, rating } = useLoaderData();
-
   const [reviews, setReviews] = useState([]);
   useTitle("Service Details");
-
-  // const navigate = useNavigate();
-  // const location = useLocation();
-  //  const from = location.state?.from?.pathname || "/";
   const { login, setLoading, user } = useContext(AuthContext);
-
   const [addReviews, setAddReviews] = useState({});
   const [refresh, setRefresh] = useState(false);
 
@@ -33,8 +21,6 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [_id, refresh]);
-
-  // console.log(reviews);
 
   const handleAddReview = (event) => {
     event.preventDefault();
@@ -54,11 +40,8 @@ const ServiceDetails = () => {
       rating,
       id,
     };
-
     setAddReviews(addReview, _id);
-
     console.log(addReview);
-    // console.log(user.photoURL);
 
     fetch("https://server-alpha-lake.vercel.app/addReviews", {
       method: "POST",
@@ -71,16 +54,11 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Review added successfully!");
-          // event.target.reset();
-          // setRefresh(!refresh);
-          // navigate(from, { replace: true });
+          toast.success("Review added successfully!");
         }
         event.target.reset();
         setRefresh(!refresh);
       });
-
-    //  .catch(er => console.error(er));
   };
 
   return (
@@ -171,14 +149,6 @@ const ServiceDetails = () => {
           </div>
         )}
       </div>
-      {/* <div className="container mx-auto my-5 max-w-4xl bg-base-100">
-        {reviews.map((serviceReview) => (
-          <Review
-            key={serviceReview._id}
-            serviceReview={serviceReview}
-          ></Review>
-        ))}
-      </div> */}
 
       {user?.uid ? (
         <>
@@ -203,7 +173,6 @@ const ServiceDetails = () => {
 
             <form onSubmit={handleAddReview} className="py-6 px-24">
               <input
-                //   onBlur={handleInputBlur}
                 type="text"
                 name="review"
                 placeholder="Write your review here"
@@ -212,7 +181,6 @@ const ServiceDetails = () => {
               />
               <br />
               <input
-                //   onBlur={handleInputBlur}
                 type="text"
                 name="rating"
                 className="w-96 text-center"

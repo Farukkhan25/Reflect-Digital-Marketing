@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
@@ -7,7 +8,6 @@ import MyReviewsCard from "./MyReviewsCard";
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   useTitle("My Reviews");
-
   const [myReviews, setMyReviews] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const MyReviews = () => {
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
-      "Are you sure, you want to cancel this order"
+      "Are you sure, you want to delete this review?"
     );
     if (proceed) {
       fetch(`https://server-alpha-lake.vercel.app/myreviews/${id}`, {
@@ -29,7 +29,7 @@ const MyReviews = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          alert("Successfully deleted!");
+          toast.success("Successfully deleted!");
           const remaining = myReviews.filter((rev) => rev._id !== id);
           setMyReviews(remaining);
         });
